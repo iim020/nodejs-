@@ -1,0 +1,24 @@
+<div class="container">
+   <ul class="list-group">
+      <% for(var i = 0; i < posts.length; i++){%>
+      <li class="list-group-item">
+         <p>글번호 : <%= posts[i]._id %></p>
+         <h4 class="detail" data-id="<%= posts[i]._id %>"> 할일 제목: <%= posts[i].제목 %> </h4>
+         <p> 할일 마감날짜:<%= posts[i].날짜 %> </p>
+         <button class="btn btn-outline-primary" data-id="<%= posts[i]._id %>">삭제</button>
+      </li>
+      <% } %>
+   </ul>
+</div>
+
+<div class="carousel-indicators">
+   <ul class="carousel-indicators-inner">
+      <% for(var i = 1; i < posts.length; i++){%>
+      <li class="list-group-item">
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%= i %>"
+            aria-label="Slide <%= i+1 %>"></button>
+      </li>
+   </ul>
+</div>
